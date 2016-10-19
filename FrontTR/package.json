@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "scripts": "gulp scripts-dev",
+    "styles": "gulp styles-dev",
+    "all-dev": "gulp all-dev",
+    "all-prod": "gulp all-prod"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^2.8.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-less": "^3.1.0",
+    "gulp-typescript": "^3.0.2",
+    "typescript": "^2.0.3"
+  }
+}
