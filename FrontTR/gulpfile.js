@@ -1,4 +1,7 @@
-var path = require('path')
+'use strict';
+
+const path = require('path')
+const fs = require('fs');
 
 const gulp = require('gulp');
 const concat = require('gulp-concat');
@@ -7,13 +10,22 @@ const cssnano = require('gulp-cssnano');
 const typescript = require('gulp-typescript');
 
 const addrs = {
-    scripts: path.join(__dirname, 'src/scripts'),
+    scripts: path.join(__dirname, 'src/scripts/**/*.tsx'),
     styles: path.join(__dirname, 'src/styles/all.less'),
     builds: path.join(__dirname, 'files/builds')
 };
 
+function readTSconfig() {
+    let config = fs.readFileSync('tsconfig.json', 'utf8');
+    config = JSON.parse(config);
+    return config;
+}
+
 gulp.task('scripts-dev', function () {
-    //
+    let tsconfig = readTSconfig();
+    return gulp.src(addrs.scripts)
+        .pipe(typescript(tsconfig))
+        .pipe(gulp.dest(addrs.builds));
 });
 
 gulp.task('styles-dev', function () {

@@ -16,6 +16,8 @@
     "gulp-cssnano": "^2.1.2",
     "gulp-less": "^3.1.0",
     "gulp-typescript": "^3.0.2",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0",
     "typescript": "^2.0.3"
   }
 }
