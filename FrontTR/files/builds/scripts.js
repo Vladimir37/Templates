@@ -1,79 +1,19 @@
-define(["require", "exports", 'react', 'react-dom', 'react-router', './app/page', './index.less'], function (require, exports, React, ReactDOM, react_router_1, page_1) {
-    "use strict";
-    ReactDOM.render(React.createElement(react_router_1.Router, {history: react_router_1.browserHistory}, 
-        React.createElement(react_router_1.Route, {path: '/', component: page_1.Page})
-    ), document.getElementById('root'));
-});
+'use strict';
 
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-define(["require", "exports", 'react'], function (require, exports, React) {
-    "use strict";
-    ;
-    ;
-    var Footer = (function (_super) {
-        __extends(Footer, _super);
-        function Footer() {
-            _super.apply(this, arguments);
-        }
-        Footer.prototype.render = function () {
-            return (React.createElement("footer", null, 
-                React.createElement("p", null, "Footer")
-            ));
-        };
-        return Footer;
-    }(React.Component));
-    exports.Footer = Footer;
-});
+var _react = require('react');
 
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-define(["require", "exports", 'react'], function (require, exports, React) {
-    "use strict";
-    ;
-    ;
-    var Header = (function (_super) {
-        __extends(Header, _super);
-        function Header() {
-            _super.apply(this, arguments);
-        }
-        Header.prototype.render = function () {
-            return (React.createElement("header", null, 
-                React.createElement("h1", null, "Main title")
-            ));
-        };
-        return Header;
-    }(React.Component));
-    exports.Header = Header;
-});
+var React = _interopRequireWildcard(_react);
 
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-define(["require", "exports", 'react', './header', './footer'], function (require, exports, React, header_1, footer_1) {
-    "use strict";
-    ;
-    ;
-    var Page = (function (_super) {
-        __extends(Page, _super);
-        function Page() {
-            _super.apply(this, arguments);
-        }
-        Page.prototype.render = function () {
-            return (React.createElement("div", null, 
-                React.createElement(header_1.Header, null), 
-                React.createElement("main", null), 
-                React.createElement(footer_1.Footer, null)));
-        };
-        return Page;
-    }(React.Component));
-    exports.Page = Page;
-});
+var _reactDom = require('react-dom');
+
+var ReactDOM = _interopRequireWildcard(_reactDom);
+
+var _reactRouter = require('react-router');
+
+var _page = require('./app/page');
+
+require('./index.less');
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+ReactDOM.render(React.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory }, React.createElement(_reactRouter.Route, { path: '/', component: _page.Page })), document.getElementById('root'));

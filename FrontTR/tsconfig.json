@@ -1,5 +1,5 @@
 {
-    "module": "amd",
+    "module": "ES6",
     "jsx": "react",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
