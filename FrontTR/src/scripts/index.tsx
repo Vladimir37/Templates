@@ -6,8 +6,6 @@ import {Router, Route, browserHistory} from 'react-router';
 
 import {Page} from './app/page';
 
-import './index.less';
-
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path='/' component={Page}/>
