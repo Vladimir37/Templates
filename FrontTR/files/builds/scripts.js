@@ -56,11 +56,13 @@
 
 	var _reactRouter = __webpack_require__(172);
 
-	var _page = __webpack_require__(235);
+	var _main = __webpack_require__(235);
+
+	var _ = __webpack_require__(238);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-	ReactDOM.render(React.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory }, React.createElement(_reactRouter.Route, { path: '/', component: _page.Page })), document.getElementById('root'));
+	ReactDOM.render(React.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory }, React.createElement(_reactRouter.Route, { path: '/', component: _main.Main }), React.createElement(_reactRouter.Route, { path: '*', component: _.NotFound })), document.getElementById('root'));
 
 /***/ },
 /* 1 */
@@ -27090,7 +27092,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.Page = undefined;
+	exports.Main = undefined;
 
 	var _react = __webpack_require__(1);
 
@@ -27113,15 +27115,16 @@
 
 	;
 	;
-	var Page = exports.Page = function (_super) {
-	    __extends(Page, _super);
-	    function Page() {
+	var Main = exports.Main = function (_super) {
+	    __extends(Main, _super);
+	    function Main() {
 	        _super.apply(this, arguments);
 	    }
-	    Page.prototype.render = function () {
+	    Main.prototype.generatePage = function () {};
+	    Main.prototype.render = function () {
 	        return React.createElement("div", null, React.createElement(_header.Header, null), React.createElement("main", null), React.createElement(_footer.Footer, null));
 	    };
-	    return Page;
+	    return Main;
 	}(React.Component);
 
 /***/ },
@@ -27200,6 +27203,52 @@
 	        return React.createElement("footer", null, React.createElement("p", null, "Footer"));
 	    };
 	    return Footer;
+	}(React.Component);
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.NotFound = undefined;
+
+	var _react = __webpack_require__(1);
+
+	var React = _interopRequireWildcard(_react);
+
+	var _header = __webpack_require__(236);
+
+	var _footer = __webpack_require__(237);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	var __extends = undefined && undefined.__extends || function (d, b) {
+	    for (var p in b) {
+	        if (b.hasOwnProperty(p)) d[p] = b[p];
+	    }function __() {
+	        this.constructor = d;
+	    }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+
+	;
+	;
+	var NotFound = exports.NotFound = function (_super) {
+	    __extends(NotFound, _super);
+	    function NotFound() {
+	        _super.apply(this, arguments);
+	    }
+	    NotFound.prototype.generatePage = function () {
+	        return React.createElement("main", null, React.createElement("h1", null, "Error 404"), React.createElement("h2", null, "Page not found"));
+	    };
+	    NotFound.prototype.render = function () {
+	        return React.createElement("div", null, React.createElement(_header.Header, null), this.generatePage(), React.createElement(_footer.Footer, null));
+	    };
+	    return NotFound;
 	}(React.Component);
 
 /***/ }
