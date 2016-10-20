@@ -12,7 +12,8 @@ const typescript = require('gulp-typescript');
 const sequence = require('gulp-sequence')
 
 const TSconfig = require('./tsconfig.json');
-const WPconfig = require('./webpack.config.js');
+const WPconfigDev = require('./webpack.dev.config.js');
+const WPconfigProd = require('./webpack.prod.config.js');
 
 const addrs = {
     scripts: path.join(__dirname, 'src/scripts/**/*.tsx'),
@@ -29,12 +30,14 @@ gulp.task('ts-compile', function () {
 
 gulp.task('js-dev', function () {
     return gulp.src(addrs.temp + 'index.js')
-        .pipe(webpack(WPconfig))
+        .pipe(webpack(WPconfigDev))
         .pipe(gulp.dest(addrs.builds));
 });
 
 gulp.task('js-prod', function () {
-    //
+    return gulp.src(addrs.temp + 'index.js')
+        .pipe(webpack(WPconfigProd))
+        .pipe(gulp.dest(addrs.builds));
 });
 
 gulp.task('scripts-dev', sequence('ts-compile', 'js-dev'));
