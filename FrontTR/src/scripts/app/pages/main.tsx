@@ -10,14 +10,14 @@ interface IMainState {};
 
 export class Main extends React.Component<IMainProps, IMainState> {
     generatePage() {
-        //
+        return <main></main>;
     }
     
     render() {
         return (
             <div>
                 <Header/>
-                <main></main>
+                {this.generatePage()}
                 <Footer/>
             </div>
         );

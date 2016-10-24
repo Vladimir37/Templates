@@ -11,9 +11,9 @@ const cssnano = require('gulp-cssnano');
 const typescript = require('gulp-typescript');
 const sequence = require('gulp-sequence')
 
-const TSconfig = require('./tsconfig.json');
-const WPconfigDev = require('./webpack.dev.config.js');
-const WPconfigProd = require('./webpack.prod.config.js');
+const TSconfig = require('./configs/tsconfig.json');
+const WPconfigDev = require('./configs/webpack.dev.config.js');
+const WPconfigProd = require('./configs/webpack.prod.config.js');
 
 const addrs = {
     scripts: path.join(__dirname, 'src/scripts/**/*.tsx'),
