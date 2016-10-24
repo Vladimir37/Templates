@@ -27120,9 +27120,11 @@
 	    function Main() {
 	        _super.apply(this, arguments);
 	    }
-	    Main.prototype.generatePage = function () {};
+	    Main.prototype.generatePage = function () {
+	        return React.createElement("main", null);
+	    };
 	    Main.prototype.render = function () {
-	        return React.createElement("div", null, React.createElement(_header.Header, null), React.createElement("main", null), React.createElement(_footer.Footer, null));
+	        return React.createElement("div", null, React.createElement(_header.Header, null), this.generatePage(), React.createElement(_footer.Footer, null));
 	    };
 	    return Main;
 	}(React.Component);

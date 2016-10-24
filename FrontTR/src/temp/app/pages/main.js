@@ -14,11 +14,12 @@ export var Main = (function (_super) {
         _super.apply(this, arguments);
     }
     Main.prototype.generatePage = function () {
+        return React.createElement("main", null);
     };
     Main.prototype.render = function () {
         return (React.createElement("div", null, 
             React.createElement(Header, null), 
-            React.createElement("main", null), 
+            this.generatePage(), 
             React.createElement(Footer, null)));
     };
     return Main;
