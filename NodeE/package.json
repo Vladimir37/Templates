@@ -1,0 +1,26 @@
+{
+  "name": "ProjectName",
+  "version": "0.0.1",
+  "license": "MIT License",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "link"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "easy-encryption": "^0.1.1",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "formidable": "^1.0.17",
+    "mysql": "^2.11.1",
+    "random-token": "0.0.8",
+    "sequelize": "^3.24.5",
+    "serve-favicon": "^2.3.0",
+    "sqlite3": "^3.1.6"
+  }
+}

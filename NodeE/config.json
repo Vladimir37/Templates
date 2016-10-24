@@ -1,0 +1,9 @@
+{
+    "port": 8080,
+    "login": "root",
+    "pass": "node_db",
+    "database": "hanako",
+    "dialect": "sqlite",
+    "storage": "app/db_storage/hanako_db.sqlite",
+    "db_port": 3306
+}
